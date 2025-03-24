@@ -6,7 +6,7 @@ if ($processes) {
     Write-Output "No processes found to export."
 }
 
-          # Get Services Running and Save that in CSV file
+          # Get Services Running and Save that in a CSV file
 $services = Get-Service | Where-Object { $_.Status -eq "Running" }  
 if($services){
     $services |  Export-Csv -Path "C:\Users\Administrator\Desktop\RunningServices.csv" -NoTypeInformation
