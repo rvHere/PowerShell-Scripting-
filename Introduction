@@ -1,0 +1,26 @@
+            #  Get Process and Save it as CSV file using IF else in PowerShell
+$processes = Get-Process
+if ($processes) {
+    $processes | Export-Csv -Path "C:\Users\Administrator\Desktop\RunningProcesses.csv" -NoTypeInformation
+} else {
+    Write-Output "No processes found to export."
+}
+
+          # Get Services Running and Save that in CSV file
+$services = Get-Service | Where-Object { $_.Status -eq "Running" }  
+if($services){
+    $services |  Export-Csv -Path "C:\Users\Administrator\Desktop\RunningServices.csv" -NoTypeInformation
+}else {
+    Write-Output "No Services Running to Export"
+}
+
+
+
+
+
+
+
+
+
+
+
