@@ -7,6 +7,7 @@ if ($processes) {
     Write-Output "No processes found to export."
 }
 
+
           # Get Services Running and Save that in a CSV file
 $services = Get-Service | Where-Object { $_.Status -eq "Running" }  
 if($services){
@@ -16,8 +17,13 @@ if($services){
     Write-Output "No Services Running to Export"
 }
 
+
             # Testing The Path is good or not
 Test-Path "C:\Users\Administrator\Desktop"             --> If this is good, we will see true
+
+
+            # Renaming the file in PowerShell
+Rename-Item -Path "API Creating Intro.py" -NewName "api_creating_intro.py"
 
 
 
